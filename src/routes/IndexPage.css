@@ -1,0 +1,12 @@
+.index{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.content{
+ flex: 1;
+ overflow-y: auto;
+ overflow-x: hidden;
+}
