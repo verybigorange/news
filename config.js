@@ -1,7 +1,8 @@
 const baseUrl = 'http://api/v1/';
 
 const api = {
-    test:'test'
+    test:'test',
+    news:'news'
 }
 
 export default {

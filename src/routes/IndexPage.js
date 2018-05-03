@@ -2,25 +2,11 @@ import React from 'react';
 import { connect } from 'dva';
 import styles from './IndexPage.css';
 import { NavBar, Icon } from 'antd-mobile';
-import axios from 'axios';
 import TabComponent from '../components/TabBottom'
 import NewsItem from './NewsItem'
-import Loading from '../components/Loading'
-
-import http from '../utils/request'
-// 输出结果
-http(
-  {
-    method:'get',
-    url:'test'
-  }
-).then(res=>{
-  console.log(res)
-})
 
 
-
-function IndexPage({ history }) {
+function IndexPage({ history,dispatch }) {
   return (
     <div className={styles.index}>
           {/* 头部 */}
@@ -35,19 +21,20 @@ function IndexPage({ history }) {
 
           {/* 中间内容部分 */}
           <section className={styles.content}>
-              <NewsItem title="test" id={123} ></NewsItem>
+              <NewsItem title="test" id={123}></NewsItem>
           </section>
 
           {/* 底部 */}
          <TabComponent />
           
-          {/* 加载*/}
-          <Loading />
     </div>
   );
 }
 
 IndexPage.propTypes = {
+
 };
 
-export default connect()(IndexPage);
+export default connect(({ indexPage })=>({
+  newsList:indexPage.newsList
+}))(IndexPage);
