@@ -6,7 +6,8 @@ import TabComponent from '../components/TabBottom'
 import NewsItem from './NewsItem'
 
 
-function IndexPage({ history,dispatch }) {
+function IndexPage({ history,dispatch,newsList }) {
+  
   return (
     <div className={styles.index}>
           {/* 头部 */}

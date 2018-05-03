@@ -4,11 +4,12 @@ import dynamic from 'dva/dynamic';
 import IndexPage from './routes/IndexPage';
 
 
-function RouterConfig({ history }) {
+function RouterConfig({ history,app }) {
   return (
     <Router history={history}>
       <Switch>
         <Route path="/" exact component={dynamic({
+          app,
           component: () => import('./routes/IndexPage'),
           models: () => [import('./models/index')],
         })} />
