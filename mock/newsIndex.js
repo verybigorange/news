@@ -16,65 +16,66 @@ const test = mock(config.api.test,{
 })
 
 const news = mock(config.api.news,{
-    'list': [{
+    'status':'T',
+    'data': [{
         'id':1,
         'title|1':Random.ctitle(5, 20),
         'introduction':Random.csentence(20,50),
-        'url':Random.image('100x100','#ffcc33', '#FFF'),
+        'url':Random.image('110x110','#ffcc33', '#FFF'),
         'date':Random.date('yyyy-MM-dd'),
     },{
         'id':2,
         'title|1':Random.ctitle(5, 20),
         'introduction':Random.csentence(20,50),
-        'url':Random.image('100x100','#ffcc33', '#FFF'),
+        'url':Random.image('110x110','#ffcc33', '#FFF'),
         'date':Random.date('yyyy-MM-dd'),
     },{
         'id':3,
         'title|1':Random.ctitle(5, 20),
         'introduction':Random.csentence(20,50),
-        'url':Random.image('100x100','#ffcc33', '#FFF'),
+        'url':Random.image('110x110','#ffcc33', '#FFF'),
         'date':Random.date('yyyy-MM-dd'),
     },{
         'id':4,
         'title|1':Random.ctitle(5, 20),
         'introduction':Random.csentence(20,50),
-        'url':Random.image('100x100','#ffcc33', '#FFF'),
+        'url':Random.image('110x110','#ffcc33', '#FFF'),
         'date':Random.date('yyyy-MM-dd'),
     },{
         'id':5,
         'title|1':Random.ctitle(5, 20),
         'introduction':Random.csentence(20,50),
-        'url':Random.image('100x100','#ffcc33', '#FFF'),
+        'url':Random.image('110x110','#ffcc33', '#FFF'),
         'date':Random.date('yyyy-MM-dd'),
     },{
         'id':6,
         'title|1':Random.ctitle(5, 20),
         'introduction':Random.csentence(20,50),
-        'url':Random.image('100x100','#ffcc33', '#FFF'),
+        'url':Random.image('110x110','#ffcc33', '#FFF'),
         'date':Random.date('yyyy-MM-dd'),
     },{
         'id':7,
         'title|1':Random.ctitle(5, 20),
         'introduction':Random.csentence(20,50),
-        'url':Random.image('100x100','#ffcc33', '#FFF'),
+        'url':Random.image('110x110','#ffcc33', '#FFF'),
         'date':Random.date('yyyy-MM-dd'),
     },{
         'id':8,
         'title|1':Random.ctitle(5, 20),
         'introduction':Random.csentence(20,50),
-        'url':Random.image('100x100','#ffcc33', '#FFF'),
+        'url':Random.image('110x110','#ffcc33', '#FFF'),
         'date':Random.date('yyyy-MM-dd'),
     },{
         'id':9,
         'title|1':Random.ctitle(5, 20),
         'introduction':Random.csentence(20,50),
-        'url':Random.image('100x100','#ffcc33', '#FFF'),
+        'url':Random.image('110x110','#ffcc33', '#FFF'),
         'date':Random.date('yyyy-MM-dd'),
     },{
         'id':10,
         'title|1':Random.ctitle(5, 20),
         'introduction':Random.csentence(20,50),
-        'url':Random.image('100x100','#ffcc33', '#FFF'),
+        'url':Random.image('110x110','#ffcc33', '#FFF'),
         'date':Random.date('yyyy-MM-dd'),
     },]
 })

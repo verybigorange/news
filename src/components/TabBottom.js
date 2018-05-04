@@ -17,7 +17,7 @@ class TabBottom extends React.Component {
 
   render() {
     return (
-      <div style={this.state.fullScreen ? {   } : { height: 400 }}>
+      <div style={this.state.fullScreen ? { width:'100%' } : { height: 400 }}>
         <TabBar
           unselectedTintColor="#949494"
           tintColor="#33A3F4"

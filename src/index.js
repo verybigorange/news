@@ -3,9 +3,18 @@ import './index.css';
 import '../mock/index';
 import 'antd-mobile/dist/antd-mobile.css'; 
 import createLoading from 'dva-loading';
-
+import { Toast } from 'antd-mobile';
+import createHistory from 'history/createBrowserHistory'
 // 1. Initialize
-const app = dva(createLoading());
+const app = dva({
+    ...createLoading({
+        effects:true
+    }),
+    history:createHistory(),
+    onError(error){
+        Toast.fail(error,1)
+    }
+});
 
 // 2. Plugins
 // app.use({});

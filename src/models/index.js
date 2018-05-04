@@ -9,16 +9,14 @@ export default {
         newsList:[]
     },
   
-    subscriptions: {
-    
-    },
-  
     effects: {
       *getNews({ payload }, { call, put }) {  // eslint-disable-line
-        const data = yield call(indexHttp.getNews);
-        yield put({ type: 'news',payload:{
+        const { data,status } = yield call(indexHttp.getNews);
+        if(status === 'T'){
+          yield put({ type: 'news',payload:{
             newsList:data
-        }});
+          }});
+        }
       },
     },
   
@@ -27,6 +25,18 @@ export default {
         return { ...state, ...action.payload };
       },
     },
+
+    subscriptions:{ 
+      // watchEntryIndexPage({ dispatch, history }){ 
+      //   history.listen(({ pathname }) => {
+      //     if(pathname === '/'){
+      //       dispatch({
+      //         type:'getNews'
+      //       })
+      //     }
+      //   })
+      // }
+    }
   
   };
   
