@@ -1,6 +1,7 @@
 import React,{ PureComponent } from 'react';  
 import { connect } from 'dva';
 import NewsItem from './NewsItem'
+import Common from '../common'
 
 class IndexPage extends PureComponent{  
 
@@ -11,14 +12,15 @@ class IndexPage extends PureComponent{
   render(){
     const { newsList } = this.props;
     return (
-            <div>
-                {
-                  newsList.map(( item,key ) => (
-                    <NewsItem {...item} key={key}></NewsItem>
-                  ))
-                }
-                <p style={{textAlign:'center'}}>没有更多内容啦...</p>
-            </div>
+      <Common> 
+            {
+              newsList.map(( item,key ) => (
+                <NewsItem {...item} key={key}></NewsItem>
+              ))
+            }
+            <p style={{textAlign:'center'}}>没有更多内容啦...</p>  
+      </Common>
+           
     );
   }
 }

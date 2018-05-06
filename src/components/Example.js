@@ -1,10 +1,12 @@
 import React from 'react';
+import Common from '../routes/common'
+
 
 const Example = () => {
   return (
-    <div>
-      Example
-    </div>
+    <Common>
+      Example66666666666666
+    </Common>
   );
 };
 
