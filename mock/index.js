@@ -1,1 +1,1 @@
-import './newsIndex';
+import './news';

@@ -7,7 +7,7 @@ import Mock from 'mockjs';
 
 const Random = Mock.Random;
 
-const test = mock(config.api.test,{
+const test = mock(config.api.test,'GET',{
     // 属性 list 的值是一个数组，其中含有 1 到 10 个元素
     'list|1-10': [{
         // 属性 id 是一个自增数，起始值为 1，每次增 1
@@ -15,6 +15,7 @@ const test = mock(config.api.test,{
     }]
 })
 
+// 新闻列表
 const news = mock(config.api.news,{
     'status':'T',
     'data': [{
@@ -80,7 +81,20 @@ const news = mock(config.api.news,{
     },]
 })
 
+
+// 新闻详情
+const newsDetail = mock(config.api.newsDetail,{
+    'status':'T',
+    'data':{
+        'url':Random.image('300x300','#ffcc33', '#FFF'),
+        'content':Random.csentence(100,150),
+        'title':Random.ctitle(5, 20),
+        'date':Random.date('yyyy-MM-dd')
+    }
+})
+
 export default {
     test,
-    news
+    news,
+    newsDetail
 }
