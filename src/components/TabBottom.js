@@ -1,11 +1,12 @@
 import { TabBar } from 'antd-mobile';
 import React from 'react';
+import { withRouter } from 'dva/router'
 
 class TabBottom extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'redTab',
+      selectedTab: 'news',
       hidden: false,
       fullScreen: true,
     };
@@ -13,6 +14,10 @@ class TabBottom extends React.Component {
 
   renderContent(pageText) {
     console.log(pageText)
+  }
+
+  tabRouter(url){
+    this.props.history.push(`/${url}`)
   }
 
   render() {
@@ -25,8 +30,8 @@ class TabBottom extends React.Component {
           hidden={this.state.hidden}
         >
           <TabBar.Item
-            title="Life"
-            key="Life"
+            title="新闻"
+            key="news"
             icon={<div style={{
               width: '22px',
               height: '22px',
@@ -39,16 +44,17 @@ class TabBottom extends React.Component {
               background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
             />
             }
-            selected={this.state.selectedTab === 'blueTab'}
+            selected={this.state.selectedTab === 'news'}
             badge={1}
             onPress={() => {
               this.setState({
-                selectedTab: 'blueTab',
+                selectedTab: 'news',
               });
+              this.tabRouter('news')
             }}
             data-seed="logId"
           >
-            {this.renderContent('Life')}
+          
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -65,18 +71,19 @@ class TabBottom extends React.Component {
                 background: 'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat' }}
               />
             }
-            title="Koubei"
-            key="Koubei"
+            title="小视频"
+            key="xsp"
             badge={'new'}
-            selected={this.state.selectedTab === 'redTab'}
+            selected={this.state.selectedTab === 'video'}
             onPress={() => {
               this.setState({
-                selectedTab: 'redTab',
+                selectedTab: 'video',
               });
+              this.tabRouter('video')
             }}
             data-seed="logId1"
           >
-            {this.renderContent('Koubei')}
+        
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -93,31 +100,33 @@ class TabBottom extends React.Component {
                 background: 'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat' }}
               />
             }
-            title="Friend"
+            title="音乐"
             key="Friend"
             dot
-            selected={this.state.selectedTab === 'greenTab'}
+            selected={this.state.selectedTab === 'music'}
             onPress={() => {
               this.setState({
-                selectedTab: 'greenTab',
+                selectedTab: 'music',
               });
+              this.tabRouter('music')
             }}
           >
-            {this.renderContent('Friend')}
+          
           </TabBar.Item>
           <TabBar.Item
             icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
             selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
-            title="My"
+            title="我的"
             key="my"
-            selected={this.state.selectedTab === 'yellowTab'}
+            selected={this.state.selectedTab === 'user'}
             onPress={() => {
               this.setState({
-                selectedTab: 'yellowTab',
+                selectedTab: 'user',
               });
+              this.tabRouter('user')
             }}
           >
-            {this.renderContent('My')}
+         
           </TabBar.Item>
         </TabBar>
       </div>
@@ -125,4 +134,4 @@ class TabBottom extends React.Component {
   }
 }
 
-export default TabBottom
+export default withRouter(TabBottom)

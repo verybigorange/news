@@ -1,7 +1,6 @@
 import React,{ PureComponent } from 'react';  
 import { connect } from 'dva';
 import NewsItem from './NewsItem'
-import Common from '../common'
 
 class IndexPage extends PureComponent{  
 
@@ -10,17 +9,17 @@ class IndexPage extends PureComponent{
   }
 
   render(){
+    console.log(this.props)
     const { newsList } = this.props;
     return (
-      <Common> 
+      <div> 
             {
               newsList.map(( item,key ) => (
                 <NewsItem {...item} key={key}></NewsItem>
               ))
             }
-            <p style={{textAlign:'center'}}>没有更多内容啦...</p>  
-      </Common>
-           
+            <p style={{textAlign:'center'}}>没有更多内容啦...</p>   
+      </div>
     );
   }
 }
@@ -30,5 +29,5 @@ IndexPage.propTypes = {
 };
 
 export default connect(({ indexPage })=>({
-  newsList:indexPage.newsList
+  newsList:indexPage.newsList,
 }))(IndexPage);

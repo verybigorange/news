@@ -5,6 +5,8 @@ import 'antd-mobile/dist/antd-mobile.css';
 import createLoading from 'dva-loading';
 import { Toast } from 'antd-mobile';
 import createHistory from 'history/createBrowserHistory'
+import 'babel-polyfill'
+
 // 1. Initialize
 const app = dva({
     ...createLoading({
