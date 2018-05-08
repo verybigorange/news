@@ -4,7 +4,8 @@
     "start": "roadhog server",
     "build": "roadhog build",
     "lint": "eslint --ext .js src test",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "test": "jest"
   },
   "dependencies": {
     "antd-mobile": "^2.1.8",
@@ -16,6 +17,8 @@
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^22.4.3",
     "babel-plugin-dva-hmr": "^0.4.1",
     "babel-plugin-import": "^1.7.0",
     "babel-polyfill": "^6.26.0",
@@ -26,8 +29,29 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
     "husky": "^0.12.0",
+    "jest": "^22.4.3",
     "mockjs": "^1.0.1-beta3",
     "redbox-react": "^1.4.3",
+    "regenerator-runtime": "^0.11.1",
     "roadhog": "^2.0.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,mjs}"
+    ],
+    "testEnvironment": "node",
+   
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
+    ],
+    "moduleFileExtensions": [
+      "web.js",
+      "mjs",
+      "js",
+      "json",
+      "web.jsx",
+      "jsx",
+      "node"
+    ]
   }
 }
