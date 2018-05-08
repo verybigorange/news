@@ -8,15 +8,13 @@ const routes = [
       path: '/news',
       component: () => import('./routes/index'),
       models: () => [import ('./models/index')],
-      name:'新闻页',
-      children:[
-        {
-          path: '/detail',
-          component: () => import('./routes/detail'),
-          models: () => [import ('./models/detail')],
-          name:'新闻详情页'
-        }
-      ]
+      name:'新闻页'
+  },
+  {
+      path: '/detail',
+      component: () => import('./routes/detail'),
+      models: () => [import ('./models/detail')],
+      name:'新闻详情页'
   },
   {
       path: '/example',
@@ -26,18 +24,6 @@ const routes = [
   }
 ]
 
-function getRoute(app,routeList) {
-  return  routeList.map(({ children,path,...dynamics}, key) => (
-    <Route exact path={path} key={key} component={dynamic({
-        app,
-        ...dynamics
-      })}
-    >
-      {children && getRoute(app,children)}
-    </Route>
-  ))
-}
-
 function RouterConfig({history,app}) {
   return (
       <div style={{height:'100%',background:'#fff'}}>
@@ -45,8 +31,15 @@ function RouterConfig({history,app}) {
                 <Switch>
                   <Route exact path="/" render={() => (<Redirect to="/news" />)} />
                   {
-                    getRoute(app,routes)
+                    routes.map(({ path,...dynamics}, key) => (
+                          <Route exact path={path} key={key} component={dynamic({
+                              app,
+                              ...dynamics
+                            })}
+                          />
+                    ))
                   }
+                
                 </Switch>
           </Router>
          <Loading/>
