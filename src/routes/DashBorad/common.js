@@ -4,8 +4,6 @@ import styles from './common.css';
 import { withRouter } from 'dva/router';
 
 
-
-
 function Common({history,children}) { 
     return (
         <div className={styles.main}>
