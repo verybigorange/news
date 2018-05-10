@@ -13,11 +13,13 @@ class TabBottom extends React.Component {
   }
 
   renderContent(pageText) {
-    console.log(pageText)
+    // console.log(pageText)
   }
 
   tabRouter(url){
-    this.props.history.push(`/${url}`)
+    // 不能重复点击
+    if(this.state.selectedTab === url) return
+    this.props.history.push(`/dashborad/${url}`)
   }
 
   render() {
@@ -54,7 +56,7 @@ class TabBottom extends React.Component {
             }}
             data-seed="logId"
           >
-          
+
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -83,7 +85,7 @@ class TabBottom extends React.Component {
             }}
             data-seed="logId1"
           >
-        
+
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -111,7 +113,7 @@ class TabBottom extends React.Component {
               this.tabRouter('music')
             }}
           >
-          
+
           </TabBar.Item>
           <TabBar.Item
             icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
@@ -126,7 +128,7 @@ class TabBottom extends React.Component {
               this.tabRouter('user')
             }}
           >
-         
+
           </TabBar.Item>
         </TabBar>
       </div>

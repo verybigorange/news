@@ -1,24 +1,23 @@
-import React,{ PureComponent } from 'react';  
+import React,{ PureComponent } from 'react';
 import { connect } from 'dva';
 import NewsItem from './NewsItem'
 
-class IndexPage extends PureComponent{  
+class IndexPage extends PureComponent{
 
   componentDidMount(){
     this.props.dispatch({type:'indexPage/getNews'})
   }
 
   render(){
-    console.log(this.props)
     const { newsList } = this.props;
     return (
-      <div> 
+      <div>
             {
               newsList.map(( item,key ) => (
                 <NewsItem {...item} key={key}></NewsItem>
               ))
             }
-            <p style={{textAlign:'center'}}>没有更多内容啦...</p>   
+            <p style={{textAlign:'center'}}>没有更多内容啦...</p>
       </div>
     );
   }

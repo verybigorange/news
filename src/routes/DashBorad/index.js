@@ -2,7 +2,6 @@ import React from 'react'
 import { Switch,Route,Redirect,withRouter } from 'dva/router'
 import dynamic from 'dva/dynamic'
 import Common from './common'
-import app from '../../index'
 
 const routes = [
     {

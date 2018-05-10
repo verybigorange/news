@@ -12,11 +12,11 @@ function NewsItem({
     history
 }) {
     return (
-        <div className={styles.newsItemBox} onClick={() => {history.push(`/detail?id=${id}`)}}>
+        <div className={styles.newsItemBox} onClick={() => {history.push(`/news/detail?id=${id}`)}}>
                 <div className={styles.itemImg}>
-                    <img src={url}  alt="图片未加载成功"/>    
+                    <img src={url}  alt="图片未加载成功"/>
                 </div>
-            
+
                 <div className={styles.right}>
                     <p className={styles.title} >{title}</p>
                     <p className={styles.introduction}>{introduction}</p>

@@ -1,7 +1,7 @@
 import dva from 'dva';
 import './index.css';
 import '../mock/index';
-import 'antd-mobile/dist/antd-mobile.css'; 
+import 'antd-mobile/dist/antd-mobile.css';
 import createLoading from 'dva-loading';
 import { Toast } from 'antd-mobile';
 // import createHistory from 'history/createBrowserHistory'
@@ -29,5 +29,3 @@ app.router(require('./router').default);
 
 // 5. Start
 app.start('#root');
-
-export default app

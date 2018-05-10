@@ -22,12 +22,11 @@ import Head from '../../components/Head'
 
     render() {
         const { url,title,content,date } = this.props.newsDetail;
-       
+
         return (
             <div>
                 <Head title="新闻详情"/>
                 <div className={styles.container}>
-                111111111111111111111111111111111
                     <p className={styles.title}>{title}</p>
                     <p className={styles.date}>{date}</p>
                     <img src={url} alt="图片未加载成功"/>
