@@ -22,6 +22,7 @@
     "babel-plugin-dva-hmr": "^0.4.1",
     "babel-plugin-import": "^1.7.0",
     "babel-polyfill": "^6.26.0",
+    "enzyme": "^3.3.0",
     "eslint": "^4.14.0",
     "eslint-config-umi": "^0.1.1",
     "eslint-plugin-flowtype": "^2.34.1",
@@ -30,6 +31,7 @@
     "eslint-plugin-react": "^7.1.0",
     "husky": "^0.12.0",
     "jest": "^22.4.3",
+    "jest-cli": "^22.4.4",
     "mockjs": "^1.0.1-beta3",
     "redbox-react": "^1.4.3",
     "regenerator-runtime": "^0.11.1",
@@ -40,7 +42,6 @@
       "src/**/*.{js,jsx,mjs}"
     ],
     "testEnvironment": "node",
-   
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
     ],
